@@ -1,10 +1,10 @@
-# LAB 18 - Architecture MVVM : ViewModel et LiveData
+# LAB 18 -  ViewModel et LiveData
 **Cours :** Programmation Mobile : Android avec Java  
 **Étudiant :** Hajar Chaira
 
 ---
 
-## 1. Objectif pédagogique
+## 1. Objectif 
 L'objectif de ce laboratoire est d'appréhender et d'implémenter l'architecture de conception **MVVM** (Model-View-ViewModel) recommandée par Google. Le projet résout le problème classique de la perte d'état lors des changements de configuration (rotation de l'écran ou changement de thème) en utilisant un composant **ViewModel** persistant en mémoire. L'interface graphique s'actualise de manière réactive et sécurisée grâce à un canal de données observable respectueux du cycle de vie (**LiveData**). De plus, des concepts avancés de multi-threading et de persistance contre les arrêts brutaux du système ont été intégrés.
 
 ---
@@ -20,10 +20,9 @@ L'objectif de ce laboratoire est d'appréhender et d'implémenter l'architecture
 ---
 
 ## 3. Démonstration Vidéo
-La vidéo ci-dessous présente la validation des fonctionnalités du projet : les incrémentations et décrémentations directes, le maintien rigoureux du compteur lors de multiples rotations d'écran, l'exécution asynchrone sécurisée initiée par le bouton de thread d'arrière-plan avec mise à jour différée, et la résilience du compteur face aux simulations de fermeture forcée.
 
-<video src="img-lab18-dev/video.mp4" controls="controls" style="max-width: 100%;">
-</video>
+[<video src="img-lab18-dev/video.mp4" controls="controls" style="max-width: 100%;">
+</video>](https://github.com/user-attachments/assets/cd751ded-79f1-44e4-bc7a-20152d727a66)
 
 ---
 
@@ -45,11 +44,3 @@ Implémentation d'une méthode de calcul asynchrone au sein du ViewModel. Elle i
 Liaison de l'activité au cycle de vie du ViewModel. L'activité s'abonne en tant qu'observateur passif sur le canal de données LiveData exposée. Elle met à jour automatiquement sa zone de texte dès qu'un changement de valeur survient et redirige les clics de ses boutons directement vers les méthodes d'action logique du ViewModel.
 
 ---
-
-## 5. Compétences acquises
-* **Découplage architectural (MVVM) :** Séparation stricte de la logique métier (ViewModel) et de la couche de rendu visuel (Activity).
-* **Programmation réactive et asynchrone :** Manipulation sécurisée de flux de données asynchrones inter-threads via `postValue()` et observation respectueuse du cycle de vie avec `LiveData` pour éviter les fuites de mémoire.
-* **Résilience d'état avancée :** Utilisation de `SavedStateHandle` pour assurer la persistance absolue des données face aux destructions de processus ordonnées par le système.
-
----
-**Rapport de TP - 2026**
